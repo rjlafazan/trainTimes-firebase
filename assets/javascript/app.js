@@ -16,7 +16,7 @@ $(document).ready(function() {
     var database = firebase.database();
 
     // store train data in the firebase database on click
-    function storingInDatabase() {
+    function storeData() {
 
         // get the value from the input fields to set them in the database
         var trainName = $('#trainNameInput').val().trim();
@@ -41,7 +41,7 @@ $(document).ready(function() {
     };
 
     // calculates the next train time and minutes until arrival
-    function getMinutesTillNextTrain(firstTrainTime, frequency) {
+    function getMinutesAway(firstTrainTime, frequency) {
         var timeRemaining;
 
         firstTrainTime = moment(parseInt(firstTrainTime));
@@ -73,28 +73,10 @@ $(document).ready(function() {
         //converting first train time
         var firstTrain = moment(parseInt(firstTrainTime)).format('HH:mm');
         var frequency = childSnapshot.val().frequency;
-        var minutesTillNextTrain = getMinutesTillNextTrain(firstTrainTime, frequency);
-        var nextTrain = moment().add(minutesTillNextTrain, 'minutes').format('hh:mm A');
+        var minutesAway = getMinutesAway(firstTrainTime, frequency);
+        var nextTrain = moment().add(minutesAway, 'minutes').format('hh:mm A');
 
         console.log(childSnapshot.val());
-        // console.log(childSnapshot.val().name);
-        // console.log(childSnapshot.val().destination);
-        // console.log(childSnapshot.val().firstTrainTime);
-        // console.log(childSnapshot.val().firstTrain);
-        // console.log(childSnapshot.val().frequency);
-        // console.log(childSnapshot.val().next);
-        // console.log(childSnapshot.val().minutes);
-
-
-        // $("#nameDisplay").text(childSnapshot.val().trainName);
-
-        // $("#frequencyDisplay").text(childSnapshot.val().frequency);
-
-        // $("#destinationDisplay").text(childSnapshot.val().destination);
-
-        // $("#nextDisplay").text(childSnapshot.val().nextTrain);
-
-        // $("#minutesDisplay").text(childSnapshot.val().minutesTilNextTrain);
 
         $('#trainTable > tbody').append(
             '<tr id="' + trainName + '" data-first-train="' + firstTrain + '">' +
@@ -102,7 +84,7 @@ $(document).ready(function() {
             '<td class="trainDestination">' + destination + '</td>' +
             '<td class="trainFrequency">' + frequency + '</td>' +
             '<td class="nextArrival">' + nextTrain + '</td>' +
-            '<td class="nextTrainTime">' + minutesTillNextTrain + '</td></tr>');
+            '<td class="nextTrainTime">' + minutesAway + '</td></tr>');
 
 
         // an error object function which will consolelog any error
@@ -110,8 +92,9 @@ $(document).ready(function() {
         console.log("The code failed: " + errorObject.code);
     });
 
-    $('#submitButton').on('click', storingInDatabase);
+    $('#submitButton').on('click', storeData);
 
 });
+
 
 
