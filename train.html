@@ -8,8 +8,6 @@
 
     <title>Chug-a-chug Train Scheduling!</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
   </head>
 
@@ -42,9 +40,9 @@
 
             </div>
 
-            <div class="panel-body" id="recent-member">
+            <div class="panel-body">
 
-              <table class="table">
+              <table class="table" id="trainTable">
 
               <thead>
 
@@ -62,12 +60,12 @@
 
                   <tbody>
 
-                    <th id="name-display"></th>
-                    <th id="destination-display"></th>
-                    <th id="frequency-display"></th>
-                    <th id="next-display"></th>
-                    <th id="minutes-input"></th>
-
+<!--                     <th id="nameDisplay"></th>
+                    <th id="destinationDisplay"></th>
+                    <th id="frequencyDisplay"></th>
+                    <th id="nextDisplay"></th>
+                    <th id="minutesDisplay"></th>
+ -->
                   </tbody>
               </table>
 
@@ -101,37 +99,39 @@
 
                       <div class="form-group">
 
-                        <label for="name-input">Name:</label>
+                        <label for="trainName" class="trainName">Name:</label>
 
-                        <input class="form-control" id="name-input" type="text">
-
-                      </div>
-
-                      <div class="form-group">
-
-                        <label for="destination-input">Destination:</label>
-
-                        <input class="form-control" id="destination-input" type="text">
+                        <input class="form-control" id="trainNameInput" type="text">
 
                       </div>
 
                       <div class="form-group">
 
-                        <label for="first-input">First Train Time (HH:mm - military time):</label>
+                        <label for="destinationInput" class="destinationName">Destination:</label>
 
-                        <input class="form-control" id="first-input" type="text">
+                        <input class="form-control" id="destinationInput" type="text">
 
                       </div>
 
                       <div class="form-group">
 
-                        <label for="frequency-input">Frequency:</label>
+                        <label for="firstTrainTimeInput" class="firstTrainTime">First Train Time (HH:mm AM/PM):</label>
 
-                        <input class="form-control" id="frequency-input" type="number">
+                        <input class="form-control" id="firstTrainTimeInput" type="time">
 
                       </div>
 
-                      <button class="btn btn-default" id="add-train" type="submit">Submit</button>
+                      <div class="form-group">
+
+                        <label for="trainFrequencyInput" class="trainFrequency">Frequency (min):</label>
+
+                        <input class="form-control" id="trainFrequencyInput" type="number">
+
+                      </div>
+
+                      <div id="submitButton" class="submit">
+                        <button class="btn btn-default" type="submit">Submit</button>
+                      </div>
 
                     </form>
 
@@ -144,9 +144,11 @@
       </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery.js"></script>
-
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+<!--     <script src = "assets/javascript/app.js" type="text/javascript"></script>
+ -->    <script src = "assets/javascript/test.js" type="text/javascript"></script>
 
   </body>
 

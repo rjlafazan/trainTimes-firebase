@@ -16,7 +16,7 @@ $(document).ready(function() {
     var database = firebase.database();
 
     // store train data in the firebase database on click
-    function storingInDatabase() {
+    function storeData() {
 
         // get the value from the input fields to set them in the database
         var trainName = $('#trainNameInput').val().trim();
@@ -41,7 +41,7 @@ $(document).ready(function() {
     };
 
     // calculates the next train time and minutes until arrival
-    function getMinutesTillNextTrain(firstTrainTime, frequency) {
+    function getMinutesAway(firstTrainTime, frequency) {
         var timeRemaining;
 
         firstTrainTime = moment(parseInt(firstTrainTime));
@@ -73,8 +73,8 @@ $(document).ready(function() {
         //converting first train time
         var firstTrain = moment(parseInt(firstTrainTime)).format('HH:mm');
         var frequency = childSnapshot.val().frequency;
-        var minutesTillNextTrain = getMinutesTillNextTrain(firstTrainTime, frequency);
-        var nextTrain = moment().add(minutesTillNextTrain, 'minutes').format('hh:mm A');
+        var minutesAway = getMinutesAway(firstTrainTime, frequency);
+        var nextTrain = moment().add(minutesAway, 'minutes').format('hh:mm A');
 
         console.log(childSnapshot.val());
         // console.log(childSnapshot.val().name);
@@ -102,7 +102,7 @@ $(document).ready(function() {
             '<td class="trainDestination">' + destination + '</td>' +
             '<td class="trainFrequency">' + frequency + '</td>' +
             '<td class="nextArrival">' + nextTrain + '</td>' +
-            '<td class="nextTrainTime">' + minutesTillNextTrain + '</td></tr>');
+            '<td class="nextTrainTime">' + minutesAway + '</td></tr>');
 
 
         // an error object function which will consolelog any error
@@ -110,8 +110,10 @@ $(document).ready(function() {
         console.log("The code failed: " + errorObject.code);
     });
 
-    $('#submitButton').on('click', storingInDatabase);
+    $('#submitButton').on('click', storeData);
 
 });
+
+
 
 
