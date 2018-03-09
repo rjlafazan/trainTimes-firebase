@@ -62,7 +62,6 @@ $(document).ready(function() {
         }
         return timeRemaining;
     };
-
     //populates added trains to firebase and to the table when user enters data
     database.ref().on('child_added', function(childSnapshot) {
         
@@ -76,15 +75,18 @@ $(document).ready(function() {
         var minutesAway = getMinutesAway(firstTrainTime, frequency);
         var nextTrain = moment().add(minutesAway, 'minutes').format('hh:mm A');
 
+        console.log('here')
         console.log(childSnapshot.val());
 
         $('#trainTable > tbody').append(
-            '<tr id="' + trainName + '" data-first-train="' + firstTrain + '">' +
-            '<td class="name">' + trainName + '</td>' +
-            '<td class="trainDestination">' + destination + '</td>' +
-            '<td class="trainFrequency">' + frequency + '</td>' +
-            '<td class="nextArrival">' + nextTrain + '</td>' +
-            '<td class="nextTrainTime">' + minutesAway + '</td></tr>');
+        '<tr id="' + trainName + '" data-first-train="' + firstTrain + '">' +
+        '<td class="name">' + trainName + '</td>' +
+        '<td class="trainDestination">' + destination + '</td>' +
+        '<td class="trainFrequency">' + frequency + '</td>' +
+        '<td class="nextArrival">' + nextTrain + '</td>' +
+        '<td class="nextTrainTime">' + minutesAway + '</td></tr>');
+
+
 
 
         // an error object function which will consolelog any error

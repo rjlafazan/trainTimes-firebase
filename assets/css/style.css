@@ -26,6 +26,11 @@ body {
 
 }
 */
+
+h1 {
+	font-size: 47px !important;
+}
+
 .panel-body {
 	background: #8E6228 !important;
 	color: #221300 !important;
