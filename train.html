@@ -3,7 +3,7 @@
 <html lang="en-us">
 
   <head>
-    <title>Chug-a-chug Train Scheduling!</title>
+    <title>Whiskey Train Scheduling!</title>
     <meta charset="UTF-8">
 
     
@@ -14,14 +14,12 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
   </head>
 
   <body>
 
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-      <a class="navbar-brand" href="index.html">Ryan's App Gallery</a>
+    <nav class="navbar navbar-expand-md navbar-dark">
+      <button type="button" class="btn navIcon"><a class="navbar-brand" href="train.html"><img src="assets/images/oldtrain.jpg" class="profile rounded-circle" alt="train" /></a></button>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -34,7 +32,7 @@
             <a class="nav-link" href="">Game Site</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="train.html">Chug-a-Chug Train Scheduler</a>
+            <a class="nav-link" href="train.html">Whiskey Train Scheduler</a>
           </li>
         </ul>
       </div>  
@@ -46,13 +44,29 @@
 
       <div class="jumbotron">
 
-        <h2 class="text-center">Chug-a-chug Train Scheduling!</h2>
-        <h5 class="text-center">The little scheduler that could</h5>
+        <div class="row">
+
+          <div class="col-lg-3">
+            <img src="assets/images/oldtrain.jpg" class="profileJumbo rounded-circle" alt="train" />
+          </div>
+          <div class="col-lg-6 jumboCenter">
+            <h2 class="text-center">Whiskey Train Scheduling!</h2>
+            <h5 class="text-center">The little scheduler that could</h5>
+          </div>
+          <div class="col-lg-3">
+            <img src="assets/images/oldtrain.jpg" class="profileJumbo rounded-circle" alt="train" />
+          </div>
+
+
+          
+        </div>
+
+        
 
       </div>
     </div>
 
-
+    <br>
 
       
     <div class="container">
@@ -89,12 +103,6 @@
 
                   <tbody>
 
-<!--                     <th id="nameDisplay"></th>
-                    <th id="destinationDisplay"></th>
-                    <th id="frequencyDisplay"></th>
-                    <th id="nextDisplay"></th>
-                    <th id="minutesDisplay"></th>
- -->
                   </tbody>
               </table>
 
@@ -173,7 +181,7 @@
       </div>
     </div>
 
-    <footer class="container-fluid text-center bg-dark">
+    <footer class="container-fluid text-center ">
       <div class="row">
         <div class="col-sm-12">
           <p>Copyright &copy; 2018 Ryan Lafazan</p>
@@ -184,9 +192,9 @@
     <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
-<!--     <script src = "assets/javascript/app.js" type="text/javascript"></script>
- -->    <script src = "assets/javascript/test.js" type="text/javascript"></script>
-
+    <script src = "assets/javascript/app.js" type="text/javascript"></script>
+<!--     <script src = "assets/javascript/test.js" type="text/javascript"></script>
+ -->
   </body>
 
 </html>

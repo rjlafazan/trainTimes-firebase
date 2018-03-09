@@ -3,7 +3,47 @@
 }
 
 body {
-	background: #ffffff;
+	background: #412500;
+	color: 
+}
+
+.panel-body {
+	/*background: url(../images/railline.jpg)*/;
+	border-color: transparent !important;
+}
+
+.jumbotron, .panel-heading, footer, nav, .navIcon {
+	background: #66400E !important;
+	color: #B2854B !important;
+}
+
+.container {
+	border-color: tan !important;
+}
+
+/*.panel, .panel-heading, .panel-title, .panel-body, .panel-default {
+	border-color: transparent !important;
+
+}
+*/
+.panel-body {
+	background: #8E6228 !important;
+	color: #221300 !important;
+	border-color: transparent !important; 
+
+}
+
+.jumboCenter {
+/*	background: url(../images/oldtrain.jpg);
+*/}
+
+.profileJumbo {
+	border: none !important;
+	/*width: 100px;*/
+	height: 125px;
+	margin: 0 5px 0 5px;
+	align-items: center;
+	display: inline;
 }
 
 
@@ -11,7 +51,7 @@ body {
 .navbar {
       margin-bottom: 0;
       border-radius: 0;
-      border-bottom: 3px solid darkblue;
+      border-bottom: 3px solid tan;
       z-index: 99;
     }
 
@@ -36,7 +76,7 @@ body {
 footer {
       color: #9d9d9d;
       padding: 25px;
-      border-top: 3px solid darkblue;
+      border-top: 3px solid tan;
       /*position: fixed;*/
       bottom: 0;
       padding: 15px 0 5px 0;
@@ -57,13 +97,13 @@ footer {
 }
 
 .connect-me {
-	border-top: 2px solid darkblue;
-    border-bottom: 2px solid darkblue;
+	border-top: 2px solid tan;
+    border-bottom: 2px solid tan;
 }
 
 .profile {
-	width: 50px;
-	height: 50px;
+	width: 75px;
+	/*height: 50px;*/
 	margin: 0 5px 0 5px;
 	align-items: center;
 	display: inline;
